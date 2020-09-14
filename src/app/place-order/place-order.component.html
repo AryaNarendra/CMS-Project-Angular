@@ -1,0 +1,54 @@
+<h2>Place Order</h2>
+<form name="placeOrder" class="form-group">
+    <table>
+        <tr class="form-group">
+            <th>Customer Id :</th>
+            <td><input class="form-control" type="number" name="model.cusId" [(ngModel)]="model.cusId" /></td>
+        </tr>
+        <tr class="form-group">
+            <th> Select Menu Item </th>
+            <td> <select class="form-control" [(ngModel)]="menu.foodName" name="foodName" (change)="showAmount()">
+                <option *ngFor="let e of menuList | async" value={{e.foodId}}>
+                    {{e.foodName}}
+                </option>
+            </select></td>
+        </tr>
+        <tr class="form-group">
+            <th>Price :</th>
+            <td> <input  class="form-control" type="number" name="price" [(ngModel)]="price" readonly /> </td>
+        </tr>
+        <tr class="form-group">
+            <th>  Select Vendor  </th>
+            <td><select  class="form-control" [(ngModel)]="vendor.venName" name="venName">
+                <option *ngFor="let f of vendorList | async" value={{f.venId}}>
+                    {{f.venName}}
+                </option>
+            </select></td>
+        </tr>
+        <tr class="form-group">
+            <th>Order Date  :</th>
+            <td> <input  class="form-control" type="date" [(ngModel)]="model.ordTime" name="ordTime" /></td>
+        </tr>
+        <tr class="form-group">
+            <th>Select Quantity :</th>
+            <td> <input class="form-control"  type="number" [(ngModel)]="model.qtyOrder" name="qtyOrder" /></td>
+        </tr>
+        <tr class="form-group">
+            <th>Select Wallet Type : </th>
+            <td><select  class="form-control" [(ngModel)]="wallet.walType" name="walType">
+                <option *ngFor="let f of walletList | async" value={{f.walType}}>
+                    {{f.walType}}
+                </option>
+            </select></td>
+        </tr>
+        <tr class="form-group">
+            <th>Order Comments  :</th>
+            <td> <input class="form-control"  type="text" [(ngModel)]="model.ordComments" name="ordComments" /></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td> <button class="button custom-btn btn-4 " value="Place Order" (click)="placeOrder()">Place Order</button></td>
+        </tr>
+        {{result}}
+    </table>
+</form>

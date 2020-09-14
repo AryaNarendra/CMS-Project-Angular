@@ -1,0 +1,24 @@
+<h2>CANCEL  ORDER</h2>
+<form class="form-group">
+    <table>
+        <tr class="form-group">
+            <th> Order ID : </th>
+            <td> <input class="form-control" type="number" name ="ordId" [(ngModel)]="ordId"/></td>
+        </tr>
+        <tr class="form-group">
+            <th>Customer ID :</th>
+             <td> <input class="form-control" type="number" name ="cusId" [(ngModel)]="cusId"/> </td>
+        </tr>
+        <tr class="form-group">
+            <th> Status : </th>
+            <td> <select class="form-control"  [(ngModel)]="status" name="status">
+                <option value="CANCELLED">CANCEL</option>
+                <option value="NONE">DON'T CANCEL</option>
+            </select></td>
+        </tr>
+        <tr class="form-group">
+            <td></td>
+            <td><input class="custom-btn btn-4 form-group" type="submit" value="Cancel Order" (click)="cancel()"></td>
+        </tr>
+        </table>
+  </form>

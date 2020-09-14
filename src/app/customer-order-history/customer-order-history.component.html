@@ -1,0 +1,42 @@
+<h2>Order History</h2>
+<input type="text" class="form-control" name="searchString" placeholder="Type to search..." [(ngModel)]="searchString"/>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ORDER ID</th>
+            <th>ORDER TIME</th>
+            <th>ORDER AMOUNT</th>
+          
+            <th>ORDER STATUS</th>
+            <th>ORDER QUANTITY</th>
+    
+            <th>FOOD ID</th>
+            <th>VENDOR ID</th>
+            <th>WALLET TYPE</th>
+            <th>ORDER COMMENTS</th>
+            
+    
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of orders | async | customerFilter :  {ordStatus: searchString,ordId:searchString, ordComments:searchString, walType:searchString,ordQuantity:searchString}; let i = index"
+            [ngStyle]="{'color': (u.ordStatus === 'ACCEPTED')?'green':(u.ordStatus === 'PENDING')?'pink':'white'}"
+        >
+
+    
+            <td>{{u.ordId}}</td>
+            <td>{{u.ordTime}}</td>
+            <td>{{u.ordAmount}}</td>
+        
+            <td>{{u.ordStatus}}</td> 
+            <td>{{u.qtyOrder}}</td> 
+        
+            <td>{{u.foodId}}</td>
+            <td>{{u.venId}}</td>
+            <td>{{u.walType}}</td> 
+            <td>{{u.ordComments}}</td> 
+        </tr>
+    </tbody>
+    
+</table>

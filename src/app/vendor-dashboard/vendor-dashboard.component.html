@@ -1,0 +1,24 @@
+
+
+<div class="row">
+  <br>
+  <!-- <div class="buttons"> -->
+  <table style="width: 100%;">
+      <tr>
+          <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/vendor-dashboard',
+            {outlets: {'data': ['vendor']}}]"><span>Vendor Details</span> </button> </td>
+          <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/vendor-dashboard',
+            {outlets: {'data': ['vendor-pending-history']}}]"><span><i class="fa fa-shopping-cart"></i>Pending Orders </span></button></td>
+          <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/vendor-dashboard',
+            {outlets: {'data': ['vendor-accept-and-reject']}}]"><span>Accept or Reject </span> </button> </td>
+          <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/vendor-dashboard',
+            {outlets: {'data': ['vendor-order-history']}}]"><span> Order History</span> </button> </td>
+          <td><button class ="btn-hover color-2" style="vertical-align:middle" md-button  [routerLink]="['/cmsmain',{outlets: {'data': ['logOut']}}]"><span>Logout</span></button>  </td>
+      </tr>
+  </table>
+  <div class="router">
+    <router-outlet name='data'></router-outlet>
+  </div>
+  
+  <!-- </div> -->
+</div>

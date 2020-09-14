@@ -1,0 +1,51 @@
+<h2>Pending History</h2>
+<input type="text" class="form-control" name="search"  placeholder="Search.." [(ngModel)]="searchString" />
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ORDER ID</th>
+            <th>ORDER TIME</th>
+            <th>ORDER AMOUNT</th>
+    
+            <th>ORDER STATUS</th>
+            <th>ORDER QUANTITY</th>
+            <th>CUSTOMER ID</th>
+            <th>FOOD ID</th>
+            <th>VENDOR ID</th>
+            <th>WALLET TYPE</th>
+            <th>ORDER COMMENTS</th>
+            <th>Accept or Reject</th>
+           
+            
+    
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let y of orders | async | vendorFilter :  {ordId: searchString, ordComments:searchString, walType:searchString,ordQuantity:searchString, ordStatus:searchString}; let i = index">
+            <td>{{y.ordId}}</td>
+            <td>{{y.ordTime}}</td>
+            <td>{{y.ordAmount}}</td>
+     
+            <td>{{y.ordStatus}}</td> 
+            <td>{{y.qtyOrder}}</td> 
+            <td>{{y.cusId}}</td>
+            <td>{{y.foodId}}</td>
+            <td>{{y.venId}}</td>
+            <td>{{y.walType}}</td> 
+            <td>{{y.ordComments}}</td>
+            <td><input type="button" class="custom-btn btn-4 " value="Accept or Reject" (click)="acceptOrReject(y.ordId, y.venId, y.ordStatus)" /></td>
+          
+            <!-- <td><button [routerLink]="['/vendor-dashboard',
+                {outlet: {'data': ['vendor-acceptedor-rejected-order']}}]">Accept And Reject </button> &nbsp;&nbsp;&nbsp;&nbsp; </td>
+                <td>
+                    <input type="checkbox" name="chkOrdid" (change)="checkIfAllSelected(y.ordId)">
+                    {{y.ordId}}
+                </td> -->
+    
+        </tr>
+    </tbody>
+    
+</table>
+
+

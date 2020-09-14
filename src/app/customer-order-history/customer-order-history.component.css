@@ -1,0 +1,14 @@
+thead tr {
+     background-color: #001844;
+     /* opacity: 0.7; */
+}
+
+
+
+tbody tr:nth-child(even) {
+    background-color: rgb(36, 36, 36);
+}
+
+tr * {
+    opacity: 1;
+}

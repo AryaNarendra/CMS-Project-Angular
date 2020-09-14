@@ -1,0 +1,37 @@
+thead tr {
+    background-color: #001844;
+    /* opacity: 0.7; */
+}
+
+
+
+tbody tr:nth-child(even) {
+   background-color: rgb(36, 36, 36);
+}
+
+tr * {
+   opacity: 1;
+}
+/* 
+input {
+    background: none;
+    color: red;
+    border: white;
+} */
+
+/* input:focus, textarea:focus {
+    background: none;
+    outline: 0;
+    border-color:white;
+
+  }
+
+  input placeholder {
+     text-decoration-color: white;
+  }
+  
+  textarea {
+    border: 2px solid #a0b3b0;
+    resize: vertical;
+    text-decoration-color: white;
+  } */

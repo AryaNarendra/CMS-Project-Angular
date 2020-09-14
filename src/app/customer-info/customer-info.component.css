@@ -1,0 +1,10 @@
+table {
+    width: 100%;
+    text-align: left;
+}
+table tr {
+    width: 100%;
+}
+table tr th,table tr td{
+    width: 50%;
+}

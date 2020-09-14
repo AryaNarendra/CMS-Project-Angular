@@ -1,0 +1,18 @@
+<div class="row">
+<br>
+<!-- <div class="buttons"> -->
+<table style="width: 100%;">
+    <tr>
+        <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/dashBoard',{outlets: {'data':['customerInfo']}}]"><span>Customer Details</span> </button> </td>
+        <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/dashBoard',{outlets: {'data':['placeOrder']}}]"><span><i class="fa fa-shopping-cart"></i> Place Order </span></button></td>
+        <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/dashBoard',{outlets: {'data':['customerPendingHistory']}}]"><span>Pending History</span> </button> </td>
+        <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/dashBoard',{outlets: {'data':['customerOrderHistory']}}]"><span> Order History</span> </button> </td>
+        <td><button class ="btn-hover color-6" style="vertical-align:middle" md-button [routerLink]="['/dashBoard',{outlets: {'data':['wallet']}}]"><span style='font-size:17px;'>&#8377; Wallet </span> </button> </td>
+        <td><button class ="btn-hover color-2" style="vertical-align:middle" md-button  [routerLink]="['/cmsmain',{outlets: {'data': ['logOut']}}]"><span>Logout</span></button>  </td>
+    </tr>
+</table>
+<div class="router">
+    <router-outlet name='data'></router-outlet>
+</div>
+<!-- </div> -->
+</div>

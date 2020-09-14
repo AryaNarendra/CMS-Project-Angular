@@ -1,0 +1,51 @@
+<!-- <div class="w3-top">
+   
+      <button type="button" class="button button1" style="vertical-align:middle" md-button [routerLink]="['/cms-main',{outlets: {'login': ['vendor-login']}}]">
+      <span> Vendor Login </span></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <button type="button" class="button button2" style="vertical-align:middle" md-button [routerLink]="['/cms-main',{outlets: {'login': ['customer-login']}}]"><span> Customer Login </span></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <router-outlet name='login'></router-outlet>
+    </div> -->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <div class="container register">
+      <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://freesvg.org/img/restaurant-design-logo-publicdomain.png" alt=""/>
+            <h3>Welcome to Restaurant</h3>
+            <p>You are 30 seconds away from getting your meal ordered!</p>
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" [routerLink]="['/cmsmain',{outlets: {'login': ['customer-login']}}]" aria-controls="home" aria-selected="true">Customer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" role="tab" [routerLink]="['/cmsmain',{outlets: {'login': ['vendor-login']}}]"  aria-controls="profile" aria-selected="false">Vendor</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <router-outlet name='login'></router-outlet>
+            </div>                                
+        </div>
+      </div>    
+  </div>
+
+  <script>
+    var customer = document.getElementById('home-tab');
+    var vendor = document.getElementById('profile-tab');
+
+
+    customer.addEventListener('click', function(){
+        this.classList.toggle('nav-link active');
+        vendor.classList.toggle('nav-link');
+    });
+
+    vendor.addEventListener('click', function(){
+        this.classList.toggle('nav-link active');
+        customer.classList.toggle('nav-link');
+    });
+  </script>

@@ -1,0 +1,25 @@
+<h2>Accept or Reject</h2>
+<form class="form-group">
+    <table>
+        <tr class="form-group">
+            <th> Vendor Id : </th>
+             <td><input class="form-control" type="number" name="vendId" [(ngModel)]="vendId" /> </td>
+        </tr>
+        <tr class="form-group">
+            <th> Order Id : </th>
+            <td> <input class="form-control" type="number" name="orderId" [(ngModel)]="orderId" /></td>
+        </tr>
+        <tr class="form-group">
+            <th> Status : </th>
+            <td> <select  class="form-control"  [(ngModel)]="status" name="status">
+                <option value="ACCEPTED">ACCEPTED</option>
+                <option value="REJECTED">REJECTED</option>
+            </select></td>
+        </tr>
+        <tr class="form-group">
+            <td></td>
+            <td><input class="form-control" type="submit" class="custom-btn btn-4 " value="Submit" (click)="acceptOrReject()"></td>
+        </tr>
+        </table>
+    {{result}}
+  </form>
